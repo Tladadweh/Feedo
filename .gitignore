@@ -1,0 +1,14 @@
+# Public showcase: allow only documentation and selected static images.
+*
+!*/
+!*.md
+!*.png
+!*.jpg
+!*.jpeg
+!*.svg
+!.gitignore
+# Keep hidden configuration and local artifacts private.
+.env*
+**/.env*
+**/.DS_Store
+**/Thumbs.db

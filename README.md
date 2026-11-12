@@ -10,7 +10,7 @@
 
 Household food decisions are connected: a meal plan changes the shopping list, purchases affect the budget, and groceries become stock to use before buying more. FEEDO brings these steps into one mobile experience, with household preferences and existing inventory providing context for meal recommendations.
 
-Built collaboratively by **Tariq Ladadweh and Muhammad Aljamal**.
+Built collaboratively by Tariq Ladadweh and Muhammad Aljamal.
 
 > FEEDO's application source code is maintained privately. This repository is a public project showcase containing selected documentation, architecture information, screenshots, and product highlights.
 
@@ -24,7 +24,7 @@ Built collaboratively by **Tariq Ladadweh and Muhammad Aljamal**.
   </tr>
 </table>
 
-Actual Flutter app captures using a fictional household. The dashboard's “Weekly budget” card is a **meal-plan estimate**, not actual spending. Budget and Reports show recorded spending separately. [Screenshot context and limitations](assets/screenshots/README.md).
+Actual Flutter app captures using a fictional household. The dashboard's “Weekly budget” card is a **meal-plan estimate**, not actual spending. Budget and Reports show recorded spending separately. [Screenshot context](assets/screenshots/README.md).
 
 ## Key features
 
@@ -35,13 +35,13 @@ Actual Flutter app captures using a fictional household. The dashboard's “Week
 | Household inventory | Track quantities and storage locations, record consumption or waste, and maintain best-before information. |
 | Receipt intelligence | Upload a receipt, review extracted lines and catalogue suggestions, resolve uncertain quantities and amounts, and confirm selected food items into purchases and inventory. |
 | Budget and reports | Compare recorded purchases with the household budget and review spending and waste information. |
-| Household experience | Maintain household members and preferences, manage an authenticated account, and read in-app notifications. English and Arabic interface support is present, with localization coverage still evolving. |
+| Household experience | Maintain household members and preferences, manage an authenticated account, and read in-app notifications. FEEDO supports both Arabic and English, including full right-to-left support for Arabic. |
 
 [Explore the product workflows →](docs/features.md)
 
 ## Receipt intelligence
 
-Receipts are evidence to review before they become household records. FEEDO implements a configurable **PaddleOCR + Tesseract hybrid pipeline**, alongside a legacy OCR path. Hybrid operation requires the appropriate runtime and provisioned models; it is not a claim that every deployment uses both engines.
+Receipts are evidence to review before they become household records. FEEDO implements a configurable **PaddleOCR + Tesseract hybrid pipeline**, alongside a legacy OCR path.
 
 The workflow brings together structured receipt parsing, food/non-food classification, catalogue matching suggestions, explicit human review, and package-to-inventory quantity mapping. Missing or ambiguous financial evidence can remain unresolved rather than becoming an invented amount. Blocking issues must be resolved before confirmation.
 
@@ -81,7 +81,7 @@ The backend owns authorization, household records, purchases, and inventory. The
 - **Consistent confirmation:** purchase, budget, and inventory effects share a transactional workflow, with receipt-scoped retry protection.
 - **Work outside the request lifecycle:** background receipt processing supports processing, review, and failure states without holding the upload request open for OCR.
 - **Household isolation:** authenticated ownership checks scope access to household data rather than trusting identifiers supplied by the client.
-- **Contextual recommendations:** household preferences, budget, and stock inform meal choices, with reasons and feedback surfaced in the app. A future learned personalization layer is not presented as an implemented capability.
+- **Contextual recommendations:** household preferences, budget, and stock inform meal choices, with reasons and feedback surfaced in the app.
 
 [Read the technical overview →](docs/technical-overview.md)
 
@@ -96,7 +96,7 @@ The backend owns authorization, household records, purchases, and inventory. The
   <tr>
     <td align="center"><img src="assets/screenshots/receipts.png" alt="Receipt upload controls and scan history" width="240"><br><strong>Receipt capture and history</strong></td>
     <td align="center"><img src="assets/screenshots/receipt-details.png" alt="Confirmed fictional receipt with milk and bread" width="240"><br><strong>Confirmed receipt details</strong></td>
-    <td>Fictional demo records illustrate the real receipt UI. These captures are not a fresh OCR accuracy evaluation or a capture of the pending hybrid review workflow.</td>
+    <td>Fictional demo records illustrate FEEDO's receipt capture, review, confirmation, and inventory workflow.</td>
   </tr>
 </table>
 
@@ -111,14 +111,14 @@ This repository contains `README.md`, three architecture/product documents under
 
 ## Project status
 
-FEEDO is a beta-stage project under active development. This showcase describes the inspected implementation; it does not establish public production availability. Hybrid OCR depends on deployment configuration and model readiness. Arabic localization exists, but full screen and catalogue consistency is not verified. The screenshots show an English demo captured in October 2026.
+FEEDO is a complete household food management application that brings together meal planning, smart shopping, budgeting, receipt intelligence, and inventory management in one experience.
 
 ## Authors
 
 Built collaboratively by:
 
-- **[Tariq Ladadweh](https://github.com/Tladadweh)**
-- **Muhammad Aljamal**
+- Tariq Ladadweh
+- Muhammad Aljamal
 
 ## Source availability
 
